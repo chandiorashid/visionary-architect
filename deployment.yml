@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: visionary-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: visionary
+  template:
+    metadata:
+      labels:
+        app: visionary
+    spec:
+      containers:
+      - name: visionary-container
+        image: rashidchandio/visionary-architects:latest
+        ports:
+        - containerPort: 80
+
